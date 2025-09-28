@@ -6,10 +6,11 @@ import AddToCartButton from "./Add-to-cart";
 
 interface ProductCardProps {
   product: Product;
-  viewmode?: "grid" | "list";
+  viewmode?: string;
 }
 
-const ProductCard = ({ product, viewmode }: ProductCardProps) => {
+
+const ProductCard = ({ product }: ProductCardProps) => {
   const formatPrice = (price: number) =>
     new Intl.NumberFormat("en-US", {
       style: "currency",
@@ -69,6 +70,9 @@ const ProductCard = ({ product, viewmode }: ProductCardProps) => {
             title: product.title,
             price: product.price,
             image: product.image,
+            rating: product.rating,
+            description: product.description,
+            category: product.category,
           }}
         />
       </div>

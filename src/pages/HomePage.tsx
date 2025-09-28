@@ -54,7 +54,7 @@ const HomePage = () => {
         const sortStrategies: Record<string, (a: Product, b: Product) => number> = {
   "price-low": (a, b) => a.price - b.price,
   "price-high": (a, b) => b.price - a.price,
-  "rating": (a, b) => b.rating.rate - a.rating.rate,
+  "rating": (a, b) => b?.rating?.rate - a?.rating?.rate,
 };
 
 if (sortStrategies[sortBy]) {

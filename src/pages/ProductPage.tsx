@@ -87,15 +87,15 @@ const ProductPage = () => {
                   key={i}
                   size={18}
                   className={`${
-                    i < Math.floor(product.rating.rate)
+                    i < Math.floor(product.rating?.rate!=null ? product.rating?.rate : 0)
                       ? "text-yellow-400 fill-yellow-400"
                       : "text-gray-300 fill-gray-300"
                   }`}
                 />
               ))}
-              <span className="ml-2 font-semibold text-gray-800">{product.rating.rate.toFixed(1)}</span>
+              <span className="ml-2 font-semibold text-gray-800">{product?.rating?.rate?.toFixed(1)}</span>
             </div>
-            <span className="text-gray-500 text-sm">({product.rating.count} reviews)</span>
+            <span className="text-gray-500 text-sm">({product?.rating?.count} reviews)</span>
           </div>
 
           <div className="flex items-baseline gap-4 p-6 bg-white rounded-xl border border-gray-200">
@@ -116,6 +116,9 @@ const ProductPage = () => {
               title: product.title,
               price: product.price,
               image: product.image,
+              rating: product.rating,
+              description: product.description,
+              category: product.category,
             }}
           />
 
