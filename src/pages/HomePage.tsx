@@ -156,9 +156,9 @@ if (sortStrategies[sortBy]) {
             <p className="text-sm">Try adjusting your search or filters</p>
           </div>
         ) : (
-          <div className={`grid gap-6 ${viewMode === "grid" ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" : "grid-cols-1"}`}>
+          <div className={`grid gap-6 ${viewMode === "grid" ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" : "flex-col max-w-200 items-center justify-center"}`}>
             {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} viewmode={viewMode} />
             ))}
           </div>
         )}

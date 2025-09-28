@@ -6,9 +6,10 @@ import AddToCartButton from "./Add-to-cart";
 
 interface ProductCardProps {
   product: Product;
+  viewmode?: "grid" | "list";
 }
 
-const ProductCard = ({ product }: ProductCardProps) => {
+const ProductCard = ({ product, viewmode }: ProductCardProps) => {
   const formatPrice = (price: number) =>
     new Intl.NumberFormat("en-US", {
       style: "currency",
@@ -19,7 +20,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
     title.length > maxLength ? `${title.substring(0, maxLength)}...` : title;
 
   return (
-    <section className="flex flex-col h-full rounded-xl overflow-hidden bg-white shadow-sm border border-gray-200 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <section
+  className="flex flex-col h-full rounded-xl overflow-hidden bg-white shadow-sm border border-gray-200 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
+>
+
       <Link to={`/product/${product.id}/details`} className="flex-1 flex flex-col">
         <div className="relative pb-[75%] bg-white">
           <img
