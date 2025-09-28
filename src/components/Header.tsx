@@ -9,7 +9,7 @@ const Header = () => {
     <nav className="fixed top-0 left-0 w-full z-10 bg-gradient-to-r from-yellow-200 via-green-300 to-rose-300 shadow-lg">
       <div className="container mx-auto flex justify-between items-center px-4 py-3">
  
-        <span className="text-white text-2xl font-bold">SEMBARK Store</span>
+        <div className=" bg-clip-text bg-gradient-to-l from-blue-400 to-purple-500 text-transparent "><span className="text-2xl font-bold">SEMBARK Store</span></div>
 
         <div className="flex space-x-4">
             <div className="flex space-x-4 justify-center items-center">
