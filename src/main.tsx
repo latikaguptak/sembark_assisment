@@ -6,6 +6,9 @@ import { createBrowserRouter } from 'react-router'
 import HomePage from './pages/HomePage.tsx'
 import ProductPage from './pages/ProductPage.tsx'
 import { RouterProvider } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { store } from './store/store.ts'
+import CartPage from './pages/CartPage.tsx'
 
 const router= createBrowserRouter([
   {
@@ -17,12 +20,12 @@ const router= createBrowserRouter([
         element:<HomePage/>
       },
       {
-        path:'/products',
+        path:'/product/:id/details',
         element:<ProductPage/>
       },
       {
         path:'/cart',
-        element:<div>Cart Page</div>
+        element:<CartPage/>
       }
     ]
       
@@ -32,6 +35,9 @@ const router= createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+      <Provider store={store}>
+
+        <RouterProvider router={router}/>
+      </Provider>
   </StrictMode>,
 )
