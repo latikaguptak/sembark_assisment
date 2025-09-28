@@ -114,7 +114,7 @@ if (sortStrategies[sortBy]) {
             </div>
             <select
               value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as any)}
+              onChange={(e) => setSortBy(e.target.value as "default" | "price-low" | "price-high" | "rating")}
               className="px-3 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:border-blue-500 cursor-pointer"
             >
               <option value="default">Default Order</option>
@@ -158,7 +158,7 @@ if (sortStrategies[sortBy]) {
         ) : (
           <div className={`grid gap-6 ${viewMode === "grid" ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" : "grid-cols-1"}`}>
             {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} viewMode={viewMode} />
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         )}
